@@ -8,7 +8,8 @@ namespace EmpWage
         public const int Rate_Per_Hour = 20;
         public const int Working_Days = 20;
         public const int Max_Hrs = 100;
-        static void Main(string[] args)
+       
+        public static int empwage()
         {
             int Hrs = 0;
             int TotalWage = 0;
@@ -40,6 +41,11 @@ namespace EmpWage
 
             TotalWage = TotalHrs * Rate_Per_Hour;
             Console.WriteLine("Total Employee Wage is " + TotalWage);
+            return TotalWage;
+        }
+        public static void Main(string[] args)
+        {
+            empwage();
         }
     }
 }
