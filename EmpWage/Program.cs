@@ -1,22 +1,19 @@
 ﻿using System;
 namespace EmpWage
 {
-   internal class Program
+    internal class Program
     {
         public const int IS_FULL_TIME = 2;
         public const int IS_PART_TIME = 1;
-        public const int Rate_Per_Hour = 20;
-        public const int Working_Days = 20;
-        public const int Max_Hrs = 100;
-       
-        public static int empwage()
+
+        public static int empwage(string company, int Rate_Per_Hour, int Working_Days, int Max_Hrs)
         {
             int Hrs = 0;
             int TotalWage = 0;
             int TotalHrs = 0;
             int TotalDays = 0;
 
-           while(TotalHrs <= Max_Hrs && TotalDays < Working_Days)
+            while (TotalHrs <= Max_Hrs && TotalDays < Working_Days)
             {
                 Random random = new Random();
                 int empCheck = random.Next(0, 3);
@@ -35,7 +32,7 @@ namespace EmpWage
                 }
 
                 TotalHrs += Hrs;
-                TotalDays += TotalDays;
+                TotalDays++;
                 Console.WriteLine("Days : " + TotalDays + "Employee Hours : " + TotalHrs);
             }
 
@@ -45,7 +42,8 @@ namespace EmpWage
         }
         public static void Main(string[] args)
         {
-            empwage();
+            empwage("DMART", 20, 20, 100);
+            empwage("Relaiance", 20, 20, 100);
         }
     }
 }
